@@ -73,6 +73,12 @@ app.put("/update", jsonParser, async (req, res) => {
   res.send("Inserted Data");
 });
 
+/// app testing route
+
+app.get("/", jsonParser, (req, res) => {
+  res.send("Server is running Perfectly 😁😁");
+});
+
 /// find one user and update;
 
 app.get("/readone/:id", jsonParser, async (req, res) => {
@@ -98,6 +104,6 @@ app.delete("/delete/:id", async (req, res) => {
 app.use(express.json());
 app.use(cors());
 
-app.listen(5000, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log("running on port 5000");
 });
