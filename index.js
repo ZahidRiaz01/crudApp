@@ -24,6 +24,7 @@ const connectDB = async () => {
 };
 connectDB();
 // Adding Data
+//commemnt for uploading to gut 
 app.post("/insertItems", jsonParser, async (req, res) => {
   //   let { name } = req.body;
   const userName = req.body.name;
