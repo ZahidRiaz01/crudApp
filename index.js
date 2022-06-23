@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 const User = require("./models/userData");
 
 const app = express();
+app.use(cors());
+
 const jsonParser = bodyParser.json();
 
 const mongoUri =
@@ -102,7 +104,6 @@ app.delete("/delete/:id", async (req, res) => {
 });
 
 app.use(express.json());
-app.use(cors());
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("running on port 5000");
